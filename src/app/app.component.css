@@ -1,0 +1,15 @@
+
+.container {
+    display: grid;
+    grid-template-rows: 50px ;
+    border-radius: 15px;
+    height: 50vh;
+    border-style: solid;
+}
+.smallcontainer{
+    grid-template-rows: 50px ;
+    width: 500pt;
+    border-radius: 15px;
+    height: 50vh;
+    border-style: solid;
+}
