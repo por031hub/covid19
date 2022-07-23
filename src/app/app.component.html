@@ -1,27 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+  
 <head>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
+  <!-- <p-toolbar class="header"></p-toolbar> -->
 </head>
-<body style="margin: 20px;">
-  <div class="row">
+<body>
+  <div class="header">
+    <h1>Diagnosis COVID19</h1>
+  </div>
+  <div class="row" style="margin: 20px;">
     <div class="col">
-      <div class="container">
-        <ul *ngIf="files.length">
-          <img *ngIf="show_img" [src]="show_img">
-          <li *ngFor="let f of files">{{f.name}} - {{f.size}} bytes
-            
-          </li>
-          <!-- <img *ngIf="show_img" [src]="show_img"> -->
-      </ul>
+      <div class="container" style="overflow: hidden; text-align: center;" >
+        
+          <p-image *ngIf="show_img != null" [src]="show_img" alt="Image" width="auto" ></p-image>
       </div>
       <div style="text-align: center;">
         <!-- <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload> -->
-        <p-fileUpload name="myfile[]" (onSelect)="myUploader($event)"></p-fileUpload>
+        <p-fileUpload name="myfile[]" (onSelect)="myUploader($event) "></p-fileUpload>
 
       </div>
      </div>
@@ -32,6 +31,10 @@
       <div style="text-align: center;"><span>Contrast</span></div>
       <div class="smallcontainer" style="margin-left: 30px;" ></div>
       <div style="text-align: center;"><span>Transfer</span></div>
+    </div>
+
+    <div>
+      <img src={{this.imgPre}} alt="">
     </div>
   </div>
 </body>
