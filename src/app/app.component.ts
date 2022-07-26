@@ -32,8 +32,6 @@ export class AppComponent {
   }
 
   public getImage(){
-    
-    
     const formData: FormData = new FormData();
     formData.append('file',  this.files, this.files.name);
     this.http.post('http://127.0.0.1:5000/upload/image',formData).subscribe(data => {

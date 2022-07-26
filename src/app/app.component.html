@@ -16,7 +16,7 @@
     <div class="col">
       <div class="container" style="overflow: hidden; text-align: center;" >
         
-          <p-image *ngIf="show_img != null" [src]="show_img" alt="Image" width="auto" ></p-image>
+          <p-image *ngIf="show_img != null" [src]="show_img" alt="Image" width="500" ></p-image>
       </div>
       <div style="text-align: center;">
         <!-- <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload> -->
@@ -24,14 +24,21 @@
 
       </div>
      </div>
-    <div class="col"> 
-      <div class="smallcontainer"  style="overflow: hidden; text-align: center; margin-left: 30;" >
-        <img src={{this.imgPre}} alt="">     
+    <div class="col" > 
+      <div class="smallcontainer"  style="overflow: hidden; text-align: center;" >
+        <img src={{this.imgPre}} alt="" width="500">     
       </div>
       <div style="text-align: center;"><span>Deblur</span></div>
-      <div class="smallcontainer" style="margin-left: 30px;" ></div>
+
+      <div class="smallcontainer"   style="overflow: hidden; text-align: center;">
+        <img src={{this.imgPre}} alt="" width="500">
+      </div>
+      
       <div style="text-align: center;"><span>Contrast</span></div>
-      <div class="smallcontainer" style="margin-left: 30px;" ></div>
+      <div class="smallcontainer"  style="overflow: hidden; text-align: center;">
+        <img src={{this.imgPre}} alt="" width="500">
+      </div>
+      
       <div style="text-align: center;"><span>Transfer</span></div>
     </div>
 
