@@ -20,7 +20,9 @@
       </div>
       <div style="text-align: center;">
         <!-- <p-fileUpload name="myfile[]" url="./upload.php"></p-fileUpload> -->
-        <p-fileUpload name="myfile[]" (onSelect)="myUploader($event)" [customUpload]="true" (uploadHandler)="getImage()"></p-fileUpload>
+        <p-fileUpload name="myfile[]" (onSelect)="myUploader($event)" [customUpload]="true" (uploadHandler)="getImage()">
+          
+        </p-fileUpload>
 
       </div>
      </div>
@@ -28,18 +30,9 @@
       <div class="smallcontainer"  style="overflow: hidden; text-align: center;" >
         <img src={{this.imgPre}} alt="" width="500">     
       </div>
-      <div style="text-align: center;"><span>Deblur</span></div>
+      <div style="text-align: center;"><span>{{result}}</span></div>
+     
 
-      <div class="smallcontainer"   style="overflow: hidden; text-align: center;">
-        <img src={{this.imgPre}} alt="" width="500">
-      </div>
-      
-      <div style="text-align: center;"><span>Contrast</span></div>
-      <div class="smallcontainer"  style="overflow: hidden; text-align: center;">
-        <img src={{this.imgPre}} alt="" width="500">
-      </div>
-      
-      <div style="text-align: center;"><span>Transfer</span></div>
     </div>
 
     <div>

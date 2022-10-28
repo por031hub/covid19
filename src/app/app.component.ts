@@ -10,15 +10,21 @@ import { count } from 'rxjs';
 export class AppComponent {
   show_img : any;
   title = 'covid19.2';
-  files : any
-
+  files : any;
+  result :string = '';
   imgPre:string = ''
-
+  
   constructor(private http:HttpClient){
 
   }
 
-  
+  predict(){
+    console.log('prdict');
+    this.http.get('http://127.0.0.1:5000/predict').subscribe(data => {
+      console.log(data)
+      // this.imgPre = 'http://127.0.0.1:5000/image/'+data
+    })
+  }
   myUploader(event : any) {
     try {
       this.files = event.files[0]
@@ -27,16 +33,20 @@ export class AppComponent {
       
       reader.onload = e => this.show_img = reader.result;
       reader.readAsDataURL(this.show_img); 
+      this.predict();
     } catch (error) {
     }
   }
 
+
   public getImage(){
+    
     const formData: FormData = new FormData();
     formData.append('file',  this.files, this.files.name);
     this.http.post('http://127.0.0.1:5000/upload/image',formData).subscribe(data => {
-      console.log(data)
-      this.imgPre = 'http://127.0.0.1:5000/image/'+data
+       console.log(data)
+       this.result = data as string;
+      // this.imgPre = 'http://127.0.0.1:5000/image/'+data
     })
   }
 
