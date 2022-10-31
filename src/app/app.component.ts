@@ -20,9 +20,14 @@ export class AppComponent {
 
   predict(){
     console.log('prdict');
+    const formData: FormData = new FormData();
+    formData.append('file',  this.files, this.files.name);
     this.http.get('http://127.0.0.1:5000/predict').subscribe(data => {
       console.log(data)
-      // this.imgPre = 'http://127.0.0.1:5000/image/'+data
+      this.result = data as string;
+      this.imgPre = 'http://127.0.0.1:5000/image/'+data
+
+     
     })
   }
   myUploader(event : any) {
@@ -46,7 +51,7 @@ export class AppComponent {
     this.http.post('http://127.0.0.1:5000/upload/image',formData).subscribe(data => {
        console.log(data)
        this.result = data as string;
-      // this.imgPre = 'http://127.0.0.1:5000/image/'+data
+       this.imgPre = 'http://127.0.0.1:5000/image/'+data
     })
   }
 
